@@ -7,4 +7,4 @@ const images1 = [
   "https://i.ibb.co/9tScNYN/pngkey-com-teen-titans-png-2109426.png",
   "https://i.ibb.co/9tScNYN/pngkey-com-teen-titans-png-2109426.png",
 ];
-module.exports = images1;
+export default images1;

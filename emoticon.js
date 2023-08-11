@@ -1,3 +1,3 @@
 const emoticon = ["🙁", "😠", "😡", "😞", "😟", "😣", "😖", "🌚"];
 
-module.exports = emoticon;
+export default emoticon;

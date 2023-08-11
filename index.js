@@ -11,22 +11,17 @@ let result;
 
 let code = 0;
 require("dotenv").config();
-const emoticon = require("./emoticon");
-const axios = require("axios");
-const hex = require("randomcolor");
-const {
-  Client,
-  MessageAttachment,
-  MessageEmbed,
-  GuildMember,
-} = require("discord.js");
+import emoticon from "./emoticon";
+import { get } from "axios";
+import hex from "randomcolor";
+import { Client, MessageAttachment, MessageEmbed, GuildMember } from "discord.js";
 const client = new Client();
 const PREFIX = "$";
-const roastMe = require("roastme");
-const welcome = require("./welcome");
-const img0 = require("./images0");
-const img1 = require("./images1");
-const img2 = require("./images2");
+import roastMe from "roastme";
+import welcome from "./welcome";
+import img0 from "./images0";
+import img1 from "./images1";
+import img2 from "./images2";
 
 client.on("ready", () => {
   console.log(`${client.user.username} has logged in...`);
@@ -239,7 +234,7 @@ client.on("message", async (message) => {
     var url = "https://v2.jokeapi.dev/joke/" + main + "?type=" + type;
 
     let getJoke = async () => {
-      let response = await axios.get(url);
+      let response = await get(url);
       let joke = response.data;
       return joke;
     };
@@ -274,7 +269,7 @@ client.on("message", async (message) => {
       "&limit=20&offset=0&rating=g&lang=en";
 
     let getSti = async () => {
-      let response = await axios.get(url);
+      let response = await get(url);
       let sti = response.data;
       return sti;
     };
@@ -302,7 +297,7 @@ client.on("message", async (message) => {
       "&offset=0&rating=g&lang=en#";
 
     let getGif = async () => {
-      let response = await axios.get(url);
+      let response = await get(url);
       let gif = response.data;
       return gif;
     };
@@ -319,7 +314,7 @@ client.on("message", async (message) => {
     var url = "https://zenquotes.io/api/random";
 
     let getQuote = async () => {
-      let response = await axios.get(url);
+      let response = await get(url);
       let quote = response.data;
       return quote;
     };
@@ -451,7 +446,7 @@ client.on("message", async (message) => {
     var url = `https://pokeapi.co/api/v2/pokemon/${p}`;
 
     let getPok = async () => {
-      let response = await axios.get(url);
+      let response = await get(url);
       let pok = response.data;
       return pok;
     };
