@@ -538,3 +538,4 @@ client.on("message", async (message) => {
 });
 // console.log(`rank1 ${rank1}`);
 client.login(process.env.DISCORD_BOT_TOKEN);
+module.exports = {};
